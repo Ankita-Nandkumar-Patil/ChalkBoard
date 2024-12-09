@@ -29,6 +29,10 @@ body{
     position: relative;
 }
 
+.hamburger{
+    padding-bottom: 4px;
+    border-bottom: 1px solid #abc2bb79;
+}
 .tools_container{
     position: absolute;
     border-left: 1px solid #e7f6f245;
@@ -45,7 +49,13 @@ body{
     align-items: center;
 }
 
-.tool{
+.tool_options_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool, .hamburger, .close{
     display: inline-block;
     height: 42px;
     width: 42px;
@@ -76,4 +86,47 @@ body{
     height: 16px;
     width: 16px;
     border-radius: 50%;
+}
+
+.hide {
+    display: none;
+}
+
+.sticky_note{
+    height: 15rem;
+    width: 15rem;
+    border: 1px solid #222831;
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    /* box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 12px; */
+}
+
+.note_header{
+    height: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #D7D3BF;
+}
+
+.note_header > div{
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.note_content{
+    height: calc(100% - 2.5rem);
+    background-color: #FEFAE0;
+}
+
+.note_content > textarea, .note_content > img {
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    background-color: transparent;
 }
