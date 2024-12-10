@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChalkBoard</title>
+    <link rel="icon" type="image/png" href="./icons/chalkboard.png">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="board_wrapper">
+        <div class="welcome_text"><span>Chalk Board: </span> The Ultimate Playground for Your Thoughts!</div>
+        
+        <div class="main_board">
+            <div class="tools_container">
+                <img src="./icons/close.svg" alt="" class="close">
+                <div class="tool_options_wrapper">
+                    <div class="tool_cont pencil_cont">
+                        <img src="./icons/pencil.svg" alt="" class="tool pencil">
+                        <div class="tool_options hide">
+                            <div class="pencil_width_cont">
+                                <input type="range" min="2" max="10" value="3" class="pencil_width"/>
+                            </div>
+                            <div class="pencil_color_cont">
+                                <div class="pencil_color" style="background-color: #FEFAE0;" data-color = "#FEFAE0"></div>
+                                <div class="pencil_color" style="background-color: #87A2FF;" data-color = "#87A2FF"></div>
+                                <div class="pencil_color" style="background-color: #FFE700;" data-color = "#FFE700"></div>
+                                <div class="pencil_color" style="background-color: #FF3EA5;" data-color = "#FF3EA5"></div>
+                                <div class="pencil_color" style="background-color: #06D001;" data-color = "#06D001"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tool_cont eraser_cont">
+                        <img src="./icons/eraser.svg" alt="" class="tool eraser">
+                        <div class="tool_options hide eraser_width_cont">
+                            <input type="range" min="10" max="50" value="15" class="eraser_width">
+                        </div>
+                    </div>
+                    <img src="./icons/addImg.svg" alt="" class="tool addImg">
+                    <img src="./icons/addNote.svg" alt="" class="tool addNote">
+                    <img src="./icons/undo.svg" alt="" class="tool undo">
+                    <img src="./icons/redo.svg" alt="" class="tool redo">
+                    <img src="./icons/dload.svg" alt="" class="tool download">
+                </div>
+            </div>
+
+            <canvas></canvas>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:5000"); //connecting with backend server
+    </script>
+    
+    <script src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+
+</body>
+</html>
